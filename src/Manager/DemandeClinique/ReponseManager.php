@@ -37,4 +37,15 @@ class ReponseManager
 
         return $reponse;
     }
+
+    public function validation(Reponse $reponse, string $motifValidation): Reponse
+    {
+        $reponse->setValide(true);
+        $reponse->setMotifValidation($motifValidation);
+        
+        $this->entityManagerInterface->persist($reponse);
+        $this->entityManagerInterface->flush();
+
+        return $reponse;
+    }
 }

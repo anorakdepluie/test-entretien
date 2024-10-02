@@ -43,6 +43,16 @@ class Reponse
      */
     private $type;
 
+    /**
+     * @ORM\Column(type="boolean", options={"default" : false})
+     */
+    private $valide = false;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $motifValidation;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -104,6 +114,30 @@ class Reponse
     public function setType(int $type): self
     {
         $this->type = $type;
+
+        return $this;
+    }
+
+    public function getValide(): ?bool
+    {
+        return $this->valide;
+    }
+
+    public function setValide(bool $valide): self
+    {
+        $this->valide = $valide;
+
+        return $this;
+    }
+
+    public function getMotifValidation(): ?string
+    {
+        return $this->motifValidation;
+    }
+
+    public function setMotifValidation(?string $motifValidation): self
+    {
+        $this->motifValidation = $motifValidation;
 
         return $this;
     }

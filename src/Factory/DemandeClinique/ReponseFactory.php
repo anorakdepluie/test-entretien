@@ -15,6 +15,8 @@ class ReponseFactory
             ->setDateCreation(new \DateTime())
             ->setDepot($depot)
             ->setType($type)
+            ->setValide(false)
+            ->setMotifValidation(null)
         ;
     }
 }
